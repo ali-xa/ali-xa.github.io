@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ali AL-Muntaser | Tech Specialist & Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+  :root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a6b;--accent:#4a90d9;--accent2:#64b5f6;--white:#f8faff;--gray:#8892b0;--card:#0d1f3c;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;transition:all .3s;}
+  body.arabic{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;}
+  .en{display:block;}.ar{display:none;}
+  body.arabic .en{display:none;}body.arabic .ar{display:block;}
+  .en-inline{display:inline;}.ar-inline{display:none;}
+  body.arabic .en-inline{display:none;}body.arabic .ar-inline{display:inline;}
+
+  nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,22,40,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(74,144,217,0.15);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
+  .nav-logo{font-size:1rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;}
+  .nav-links{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;}
+  .nav-links a{color:var(--gray);font-size:.82rem;text-decoration:none;transition:.2s;font-weight:500;}
+  .nav-links a:hover{color:var(--accent2);}
+  .lang-btn{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;border:none;padding:.4rem 1rem;border-radius:20px;cursor:pointer;font-size:.8rem;font-weight:700;letter-spacing:1px;transition:transform .2s;box-shadow:0 2px 12px rgba(74,144,217,0.3);}
+  .lang-btn:hover{transform:scale(1.05);}
+
+  /* HERO */
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:8rem 2rem 4rem;position:relative;overflow:hidden;text-align:center;}
+  .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(26,58,107,0.6),transparent 70%),radial-gradient(ellipse at 20% 80%,rgba(74,144,217,0.15),transparent 50%);pointer-events:none;}
+  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(74,144,217,0.12);border:1px solid rgba(74,144,217,0.35);border-radius:30px;padding:.4rem 1.2rem;font-size:.78rem;color:var(--accent2);letter-spacing:1px;margin-bottom:1.5rem;animation:fadeDown .8s ease;}
+  .hero h1{font-size:clamp(2rem,6vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:.5rem;animation:fadeUp .8s ease .1s both;}
+  .hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .hero-name{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--accent2);font-weight:700;margin-bottom:1rem;letter-spacing:1px;animation:fadeUp .8s ease .15s both;}
+  .hero-sub{font-size:clamp(.88rem,2vw,1.05rem);color:var(--gray);max-width:600px;line-height:1.8;margin-bottom:2rem;animation:fadeUp .8s ease .2s both;}
+  .cert-badge{display:inline-flex;align-items:center;gap:.75rem;background:linear-gradient(135deg,rgba(74,144,217,0.1),rgba(26,58,107,0.4));border:1px solid rgba(74,144,217,0.4);border-radius:12px;padding:.8rem 1.6rem;margin-bottom:2.5rem;animation:fadeUp .8s ease .3s both;}
+  .cert-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--navy3));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .cert-text-block{text-align:left;}
+  body.arabic .cert-text-block{text-align:right;}
+  .cert-title-sm{font-size:.68rem;color:var(--accent2);letter-spacing:1px;font-weight:700;text-transform:uppercase;}
+  .cert-name-sm{font-size:.88rem;font-weight:700;color:#fff;}
+  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .4s both;}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(74,144,217,0.35);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,144,217,0.5);}
+  .btn-outline{border:1.5px solid var(--accent);color:var(--accent2);padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .2s;}
+  .btn-outline:hover{background:rgba(74,144,217,0.1);transform:translateY(-2px);}
+  .scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--gray);font-size:.7rem;letter-spacing:1px;animation:bounce 2s infinite;}
+  .scroll-indicator svg{width:20px;height:20px;color:var(--accent);}
+
+  /* SECTIONS */
+  section{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
+  .section-label{font-size:.72rem;color:var(--accent2);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:.5rem;}
+  .section-title{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:800;margin-bottom:.6rem;}
+  .section-title span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .section-line{width:50px;height:3px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:3rem;}
+  .section-divider{max-width:1100px;margin:0 auto;border:none;border-top:1px solid rgba(74,144,217,0.08);}
+
+  /* ABOUT */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
+  @media(max-width:700px){.about-grid{grid-template-columns:1fr;}}
+  .about-text{color:var(--gray);line-height:1.9;font-size:.95rem;}
+  .about-text p{margin-bottom:1rem;}
+  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .stat-card{background:var(--card);border:1px solid rgba(74,144,217,0.15);border-radius:12px;padding:1.2rem;text-align:center;transition:.3s;}
+  .stat-card:hover{border-color:var(--accent);transform:translateY(-2px);}
+  .stat-num{font-size:2rem;font-weight:800;color:var(--accent2);}
+  .stat-label{font-size:.76rem;color:var(--gray);margin-top:.2rem;}
+
+  /* CERTIFICATE */
+  .cert-section-card{background:linear-gradient(135deg,var(--navy2),var(--navy3));border:1px solid rgba(74,144,217,0.35);border-radius:20px;padding:2.5rem;display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;box-shadow:0 8px 40px rgba(74,144,217,0.1);position:relative;overflow:hidden;}
+  @media(max-width:650px){.cert-section-card{grid-template-columns:1fr;text-align:center;}}
+  .cert-section-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(74,144,217,0.12),transparent 60%);pointer-events:none;}
+  .cert-medal{width:100px;height:100px;background:linear-gradient(135deg,#f6c90e,#e8a000);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.8rem;flex-shrink:0;box-shadow:0 0 30px rgba(246,201,14,0.35);border:3px solid rgba(246,201,14,0.4);}
+  @media(max-width:650px){.cert-medal{margin:0 auto;}}
+  .cert-issued{font-size:.7rem;color:var(--accent2);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:.4rem;}
+  .cert-prog-name{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1.3;}
+  .cert-prog-name span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+  .cert-org{font-size:.85rem;color:var(--accent2);font-weight:600;margin-bottom:.8rem;}
+  .cert-desc{font-size:.83rem;color:var(--gray);line-height:1.75;margin-bottom:1.2rem;max-width:600px;}
+  .cert-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
+  @media(max-width:650px){.cert-tags{justify-content:center;}}
+  .cert-tag-pill{background:rgba(74,144,217,0.12);border:1px solid rgba(74,144,217,0.25);color:var(--accent2);font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;letter-spacing:.5px;}
+
+  /* SKILLS */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;}
+  .skill-card{background:var(--card);border:1px solid rgba(74,144,217,0.12);border-radius:14px;padding:1.5rem;transition:.3s;}
+  .skill-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 30px rgba(74,144,217,0.1);}
+  .skill-icon{width:44px;height:44px;background:linear-gradient(135deg,rgba(74,144,217,0.2),rgba(26,58,107,0.5));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.9rem;border:1px solid rgba(74,144,217,0.25);}
+  .skill-name{font-weight:700;font-size:.92rem;margin-bottom:.3rem;}
+  .skill-desc{color:var(--gray);font-size:.8rem;line-height:1.6;margin-bottom:.9rem;}
+  .skill-bar-bg{background:rgba(74,144,217,0.1);border-radius:10px;height:5px;overflow:hidden;}
+  .skill-bar{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s ease;}
+
+  /* PROJECTS */
+  .projects-stack{display:flex;flex-direction:column;gap:2.5rem;}
+  .project-card{background:var(--card);border:1px solid rgba(74,144,217,0.2);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1.4fr;transition:.3s;box-shadow:0 8px 40px rgba(0,0,0,0.3);}
+  @media(max-width:700px){.project-card{grid-template-columns:1fr;}}
+  .project-card:hover{border-color:var(--accent);box-shadow:0 12px 50px rgba(74,144,217,0.15);}
+  .project-visual{background:linear-gradient(135deg,var(--navy2),var(--navy3));min-height:260px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;padding:2rem;position:relative;overflow:hidden;}
+  .project-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(74,144,217,0.2),transparent 70%);}
+  .project-visual-icon{font-size:3.2rem;z-index:1;}
+  .project-chips{display:flex;flex-wrap:wrap;gap:.4rem;z-index:1;justify-content:center;}
+  .chip{background:rgba(74,144,217,0.15);border:1px solid rgba(74,144,217,0.3);color:var(--accent2);font-size:.67rem;font-weight:600;padding:.2rem .6rem;border-radius:20px;}
+  .project-info{padding:1.8rem;display:flex;flex-direction:column;}
+  .project-tag{display:inline-block;background:rgba(74,144,217,0.12);color:var(--accent2);font-size:.67rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.22rem .72rem;border-radius:20px;border:1px solid rgba(74,144,217,0.25);margin-bottom:.75rem;align-self:flex-start;}
+  body.arabic .project-tag{align-self:flex-end;}
+  .project-title{font-size:1.1rem;font-weight:800;margin-bottom:.6rem;line-height:1.3;}
+  .project-desc{color:var(--gray);font-size:.82rem;line-height:1.8;margin-bottom:1rem;}
+  .features-title{font-size:.7rem;color:var(--accent2);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;}
+  .project-features{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1rem;}
+  .project-features li{display:flex;align-items:flex-start;gap:.5rem;color:var(--gray);font-size:.79rem;line-height:1.5;}
+  body.arabic .project-features li{flex-direction:row-reverse;}
+  .project-features li::before{content:'▸';color:var(--accent);font-size:.72rem;flex-shrink:0;margin-top:2px;}
+  .impact-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.9rem;}
+  .impact-chip{background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);border-radius:8px;padding:.35rem .7rem;font-size:.72rem;color:var(--white);}
+  .impact-chip b{color:var(--accent2);}
+  .project-meta{display:flex;gap:.9rem;flex-wrap:wrap;}
+  .meta-item{display:flex;align-items:center;gap:.35rem;font-size:.73rem;color:var(--gray);}
+  .meta-item svg{color:var(--accent2);width:13px;height:13px;}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1.5rem;max-width:750px;}
+  .contact-card{background:var(--card);border:1px solid rgba(74,144,217,0.15);border-radius:16px;padding:1.8rem;text-align:center;transition:.3s;}
+  .contact-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .contact-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--accent),var(--navy3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto 1rem;}
+  .contact-label{font-size:.7rem;color:var(--accent2);letter-spacing:1px;font-weight:700;text-transform:uppercase;margin-bottom:.4rem;}
+  .contact-value{font-size:.85rem;font-weight:600;color:#fff;word-break:break-all;}
+  .contact-value a{color:#fff;text-decoration:none;direction:ltr;display:inline-block;unicode-bidi:embed;}
+  .contact-value a:hover{color:var(--accent2);}
+
+  footer{text-align:center;padding:2rem;border-top:1px solid rgba(74,144,217,0.1);color:var(--gray);font-size:.78rem;}
+  footer span{color:var(--accent2);}
+
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s;}
+  .fade-in.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <span class="en-inline">Ali AL-Muntaser</span>
+    <span class="ar-inline">علي المنتصر</span>
+  </div>
+  <div class="nav-links">
+    <a href="#about"><span class="en-inline">About</span><span class="ar-inline">عني</span></a>
+    <a href="#certificate"><span class="en-inline">Certificate</span><span class="ar-inline">الشهادة</span></a>
+    <a href="#skills"><span class="en-inline">Skills</span><span class="ar-inline">المهارات</span></a>
+    <a href="#projects"><span class="en-inline">Projects</span><span class="ar-inline">المشاريع</span></a>
+    <a href="#contact"><span class="en-inline">Contact</span><span class="ar-inline">تواصل</span></a>
+    <button class="lang-btn" onclick="toggleLang()">
+      <span class="en-inline">🌐 عربي</span>
+      <span class="ar-inline">🌐 English</span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">
+    ⭐ <span class="en-inline">Certified — Dubai Future Foundation</span>
+    <span class="ar-inline">معتمد — مؤسسة دبي للمستقبل</span>
+  </div>
+  <h1>
+    <span class="en-inline">Tech Specialist &<br/><span>Data Analyst</span></span>
+    <span class="ar-inline">متخصص تقني<br/><span>ومحلل بيانات</span></span>
+  </h1>
+  <div class="hero-name">
+    <span class="en-inline">Ali AL-Muntaser</span>
+    <span class="ar-inline">علي المنتصر</span>
+  </div>
+  <p class="hero-sub">
+    <span class="en-inline">Transforming complex business processes through intelligent automation, advanced Excel/VBA solutions, and AI-assisted programming.</span>
+    <span class="ar-inline">تحويل العمليات التجارية المعقدة من خلال الأتمتة الذكية وحلول Excel/VBA المتقدمة والبرمجة بمساعدة الذكاء الاصطناعي.</span>
+  </p>
+  <div class="cert-badge">
+    <div class="cert-icon">🏆</div>
+    <div class="cert-text-block">
+      <div class="cert-title-sm"><span class="en-inline">Certificate of Completion</span><span class="ar-inline">شهادة إتمام</span></div>
+      <div class="cert-name-sm"><span class="en-inline">1 Million Prompters — Dubai Future Foundation</span><span class="ar-inline">مليون خبير لأوامر الذكاء الاصطناعي — مؤسسة دبي للمستقبل</span></div>
+    </div>
+  </div>
+  <div class="hero-btns">
+    <a href="#projects" class="btn-primary"><span class="en-inline">View Projects</span><span class="ar-inline">عرض المشاريع</span></a>
+    <a href="#contact" class="btn-outline"><span class="en-inline">Get In Touch</span><span class="ar-inline">تواصل معي</span></a>
+  </div>
+  <div class="scroll-indicator">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    <span class="en-inline">Scroll</span><span class="ar-inline">مرر</span>
+  </div>
+</div>
+
+<hr class="section-divider"/>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="fade-in">
+    <div class="section-label"><span class="en-inline">Who I Am</span><span class="ar-inline">من أنا</span></div>
+    <h2 class="section-title"><span class="en-inline">About <span>Me</span></span><span class="ar-inline">نبذة <span>عني</span></span></h2>
+    <div class="section-line"></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="en">I am <strong style="color:#fff">Ali AL-Muntaser</strong>, a certified Tech Specialist and Data Analyst with deep expertise in Excel/VBA automation, business process optimization, and AI-assisted programming. My work bridges technology and business strategy to deliver high-impact, data-driven solutions.</p>
+        <p class="ar">أنا <strong style="color:#fff">علي المنتصر</strong>، متخصص تقني ومحلل بيانات معتمد، أمتلك خبرة عميقة في أتمتة Excel/VBA، وتحسين العمليات التجارية، والبرمجة بمساعدة الذكاء الاصطناعي. يربط عملي بين التكنولوجيا واستراتيجية الأعمال لتقديم حلول عالية التأثير مبنية على البيانات.</p>
+        <p class="en">Certified by the <strong style="color:var(--accent2)">Dubai Future Foundation</strong> through the One Million Prompters initiative — launched by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai.</p>
+        <p class="ar">معتمد من <strong style="color:var(--accent2)">مؤسسة دبي للمستقبل</strong> من خلال مبادرة مليون خبير لأوامر الذكاء الاصطناعي — التي أطلقها سمو الشيخ حمدان بن محمد بن راشد آل مكتوم، ولي عهد دبي.</p>
+        <p class="en">With a systems-thinking mindset, I design automation solutions that save time, reduce errors, and generate actionable insights for decision-makers.</p>
+        <p class="ar">بعقلية تفكير منظومية، أصمم حلول أتمتة توفر الوقت وتقلل الأخطاء وتولّد رؤى قابلة للتنفيذ لصانعي القرار.</p>
+      </div>
+      <div class="about-stats">
+        <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label en">Weeks — Featured Project</div><div class="stat-label ar">أسابيع — المشروع المميز</div></div>
+        <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label en">Core Specializations</div><div class="stat-label ar">تخصصات رئيسية</div></div>
+        <div class="stat-card"><div class="stat-num">🏆</div><div class="stat-label en">DFF Certified</div><div class="stat-label ar">معتمد من DFF</div></div>
+        <div class="stat-card"><div class="stat-num">75%</div><div class="stat-label en">Reporting Time Saved</div><div class="stat-label ar">تقليل وقت التقارير</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- CERTIFICATE -->
+<section id="certificate">
+  <div class="fade-in">
+    <div class="section-label"><span class="en-inline">Official Credential</span><span class="ar-inline">الاعتماد الرسمي</span></div>
+    <h2 class="section-title"><span class="en-inline">My <span>Certificate</span></span><span class="ar-inline"><span>شهادتي</span></span></h2>
+    <div class="section-line"></div>
+    <div class="cert-section-card">
+      <div class="cert-medal">🏆</div>
+      <div>
+        <div class="cert-issued"><span class="en-inline">Certificate of Completion</span><span class="ar-inline">شهادة إتمام</span></div>
+        <div class="cert-prog-name">
+          <span class="en-inline"><span>1 Million Prompters</span> Initiative</span>
+          <span class="ar-inline">مبادرة <span>مليون خبير لأوامر الذكاء الاصطناعي</span></span>
+        </div>
+        <div class="cert-org">
+          <span class="en-inline">🏛 Dubai Future Foundation &nbsp;|&nbsp; Dubai Centre for Artificial Intelligence</span>
+          <span class="ar-inline">🏛 مؤسسة دبي للمستقبل &nbsp;|&nbsp; مركز دبي للذكاء الاصطناعي</span>
+        </div>
+        <div class="cert-desc">
+          <span class="en">Awarded to <strong style="color:#fff">Ali AL-Muntaser</strong> for successfully completing the One Million Prompters initiative, launched by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai. This initiative trains professionals in prompt engineering for AI systems, in alignment with the Dubai Universal Blueprint for Artificial Intelligence — contributing to building a future-ready workforce.</span>
+          <span class="ar">مُمنوحة إلى <strong style="color:#fff">علي المنتصر</strong> لإتمامه بنجاح مبادرة مليون خبير لأوامر الذكاء الاصطناعي، التي أطلقها سمو الشيخ حمدان بن محمد بن راشد آل مكتوم، ولي عهد دبي. تهدف هذه المبادرة إلى تدريب وتمكين المحترفين في مجال هندسة الأوامر لأنظمة الذكاء الاصطناعي، انسجاماً مع المخطط الشامل لدبي للذكاء الاصطناعي.</span>
+        </div>
+        <div class="cert-tags">
+          <span class="cert-tag-pill"><span class="en-inline">Prompt Engineering</span><span class="ar-inline">هندسة الأوامر</span></span>
+          <span class="cert-tag-pill"><span class="en-inline">Artificial Intelligence</span><span class="ar-inline">الذكاء الاصطناعي</span></span>
+          <span class="cert-tag-pill"><span class="en-inline">Dubai Future Foundation</span><span class="ar-inline">مؤسسة دبي للمستقبل</span></span>
+          <span class="cert-tag-pill"><span class="en-inline">Future Skills</span><span class="ar-inline">مهارات المستقبل</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="fade-in">
+    <div class="section-label"><span class="en-inline">Expertise</span><span class="ar-inline">الخبرة</span></div>
+    <h2 class="section-title"><span class="en-inline">Core <span>Skills</span></span><span class="ar-inline">المهارات <span>الأساسية</span></span></h2>
+    <div class="section-line"></div>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">💻</div>
+        <div class="skill-name en">Computer System Expert</div><div class="skill-name ar">خبير أنظمة الحاسوب</div>
+        <div class="skill-desc en">Deep understanding of hardware, software ecosystems, OS environments, and system architecture for optimal performance.</div>
+        <div class="skill-desc ar">فهم عميق للأجهزة وبيئات البرمجيات وأنظمة التشغيل وهندسة الأنظمة لتحقيق الأداء الأمثل.</div>
+        <div class="skill-bar-bg"><div class="skill-bar" data-width="92%" style="width:0"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name en">Business Process Automation</div><div class="skill-name ar">أتمتة العمليات التجارية</div>
+        <div class="skill-desc en">Designing and deploying intelligent workflows that replace manual tasks, cut processing time, and eliminate human error.</div>
+        <div class="skill-desc ar">تصميم ونشر سير العمل الذكية التي تحل محل المهام اليدوية وتقلل وقت المعالجة وتقضي على الخطأ البشري.</div>
+        <div class="skill-bar-bg"><div class="skill-bar" data-width="95%" style="width:0"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🤖</div>
+        <div class="skill-name en">AI-Assisted Programming</div><div class="skill-name ar">البرمجة بمساعدة الذكاء الاصطناعي</div>
+        <div class="skill-desc en">Leveraging large language models and AI tools to accelerate development, debug complex logic, and build smarter solutions.</div>
+        <div class="skill-desc ar">استخدام نماذج اللغة الكبيرة وأدوات الذكاء الاصطناعي لتسريع التطوير وتصحيح المنطق المعقد وبناء حلول أذكى.</div>
+        <div class="skill-bar-bg"><div class="skill-bar" data-width="90%" style="width:0"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">💬</div>
+        <div class="skill-name en">Professional Prompt Engineering</div><div class="skill-name ar">هندسة الأوامر الاحترافية</div>
+        <div class="skill-desc en">Crafting precise, structured prompts that maximize AI output quality for automation, analysis, and creative problem-solving.</div>
+        <div class="skill-desc ar">صياغة أوامر دقيقة ومنظمة تعظّم جودة مخرجات الذكاء الاصطناعي للأتمتة والتحليل وحل المشكلات الإبداعية.</div>
+        <div class="skill-bar-bg"><div class="skill-bar" data-width="93%" style="width:0"></div></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📊</div>
+        <div class="skill-name en">VBA & Excel Automation + Data Analysis</div><div class="skill-name ar">أتمتة VBA وExcel وتحليل البيانات</div>
+        <div class="skill-desc en">Building advanced macros, automated dashboards, dynamic reports, and robust data pipelines inside Microsoft Excel using VBA.</div>
+        <div class="skill-desc ar">بناء وحدات ماكرو متقدمة ولوحات معلومات آلية وتقارير ديناميكية وخطوط بيانات قوية داخل Microsoft Excel باستخدام VBA.</div>
+        <div class="skill-bar-bg"><div class="skill-bar" data-width="97%" style="width:0"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="fade-in">
+    <div class="section-label"><span class="en-inline">Featured Work</span><span class="ar-inline">الأعمال المميزة</span></div>
+    <h2 class="section-title"><span class="en-inline">My <span>Projects</span></span><span class="ar-inline"><span>مشاريعي</span></span></h2>
+    <div class="section-line"></div>
+    <div class="projects-stack">
+
+      <!-- PROJECT 1 -->
+      <div class="project-card">
+        <div class="project-visual">
+          <div class="project-visual-icon">📊</div>
+          <div class="project-chips">
+            <span class="chip">Excel</span><span class="chip">VBA</span><span class="chip">Dashboard</span><span class="chip">KPIs</span><span class="chip">CRM</span><span class="chip">Automation</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag"><span class="en-inline">⭐ Featured — 3 Weeks Development</span><span class="ar-inline">⭐ مميز — 3 أسابيع تطوير</span></span>
+          <h3 class="project-title">
+            <span class="en">Sales Performance Dashboard & Management System</span>
+            <span class="ar">لوحة تحكم وإدارة أداء المبيعات</span>
+          </h3>
+          <p class="project-desc">
+            <span class="en">A comprehensive Sales Performance Dashboard built with advanced Microsoft Excel and VBA automation, providing a real-time interactive overview of sales metrics to support data-driven decision-making.</span>
+            <span class="ar">لوحة تحكم شاملة لأداء المبيعات مبنية على Microsoft Excel وأتمتة VBA، توفر نظرة عامة تفاعلية وفورية لمقاييس المبيعات لدعم اتخاذ القرارات المستندة إلى البيانات.</span>
+          </p>
+          <div class="features-title"><span class="en-inline">Key Features</span><span class="ar-inline">الميزات الرئيسية</span></div>
+          <ul class="project-features">
+            <li><span class="en">Dynamic Dashboard with interactive charts, graphs, and KPIs visualizing sales trends and team metrics.</span><span class="ar">لوحة تحكم ديناميكية مع رسوم بيانية تفاعلية ومؤشرات KPIs لتصور اتجاهات المبيعات ومقاييس الفريق.</span></li>
+            <li><span class="en">Automated Data Processing via VBA macros for extraction, cleaning, and transformation from multiple sources.</span><span class="ar">معالجة البيانات تلقائياً عبر ماكرو VBA للاستخراج والتنظيف والتحويل من مصادر متعددة.</span></li>
+            <li><span class="en">One-click generation of weekly, monthly, and quarterly sales reports automatically.</span><span class="ar">إنشاء تقارير مبيعات أسبوعية وشهرية وربع سنوية تلقائياً بنقرة واحدة.</span></li>
+            <li><span class="en">CRM Integration (Optional) via API or direct database connections.</span><span class="ar">التكامل مع نظم CRM (اختياري) عبر API أو الاتصال المباشر بقواعد البيانات.</span></li>
+            <li><span class="en">User-Friendly Interface with custom Excel UserForms for easy data entry.</span><span class="ar">واجهة سهلة الاستخدام مع نماذج UserForms مخصصة لتسهيل إدخال البيانات.</span></li>
+          </ul>
+          <div class="features-title"><span class="en-inline">Impact</span><span class="ar-inline">الأثر</span></div>
+          <div class="impact-row">
+            <div class="impact-chip">⚡ <b><span class="en-inline">75%</span><span class="ar-inline">75%</span></b> <span class="en-inline">less reporting time</span><span class="ar-inline">تقليل وقت التقارير</span></div>
+            <div class="impact-chip">🎯 <b><span class="en-inline">Insights</span><span class="ar-inline">رؤى</span></b> <span class="en-inline">profit segments identified</span><span class="ar-inline">تحديد القطاعات المربحة</span></div>
+            <div class="impact-chip">✅ <b><span class="en-inline">Zero</span><span class="ar-inline">صفر</span></b> <span class="en-inline">manual entry errors</span><span class="ar-inline">أخطاء إدخال يدوي</span></div>
+          </div>
+          <div class="project-meta">
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="en-inline">3 Weeks</span><span class="ar-inline">3 أسابيع</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span>Excel + VBA</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg><span class="en-inline">AI-Assisted</span><span class="ar-inline">بمساعدة AI</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 -->
+      <div class="project-card">
+        <div class="project-visual">
+          <div class="project-visual-icon">💰</div>
+          <div class="project-chips">
+            <span class="chip">Excel</span><span class="chip">VBA</span><span class="chip">Automation</span><span class="chip">Reporting</span><span class="chip">Finance</span>
+          </div>
+        </div>
+        <div class="project-info">
+          <span class="project-tag"><span class="en-inline">Automated System</span><span class="ar-inline">نظام آلي</span></span>
+          <h3 class="project-title">
+            <span class="en">Sales & Expense Management System</span>
+            <span class="ar">نظام إدارة المبيعات والمصروفات</span>
+          </h3>
+          <p class="project-desc">
+            <span class="en">A fully automated, enterprise-grade system built entirely in Microsoft Excel with VBA, designed to manage sales records, track expenses, and generate real-time executive reports — no external software required.</span>
+            <span class="ar">نظام آلي متكامل على مستوى المؤسسات، مبني بالكامل في Microsoft Excel مع VBA، مصمم لإدارة سجلات المبيعات وتتبع المصروفات وإنشاء تقارير تنفيذية فورية — دون الحاجة لأي برنامج خارجي.</span>
+          </p>
+          <ul class="project-features">
+            <li><span class="en">Automated data entry forms with input validation and error handling.</span><span class="ar">نماذج إدخال بيانات آلية مع التحقق من الإدخال ومعالجة الأخطاء.</span></li>
+            <li><span class="en">Dynamic sales and expense dashboards with live KPI tracking.</span><span class="ar">لوحات معلومات ديناميكية للمبيعات والمصروفات مع تتبع مؤشرات الأداء المباشر.</span></li>
+            <li><span class="en">One-click automated report generation in PDF and Excel formats.</span><span class="ar">إنشاء تقارير آلية بنقرة واحدة بصيغتي PDF وExcel.</span></li>
+            <li><span class="en">Multi-sheet architecture with protected data integrity layers.</span><span class="ar">بنية متعددة الأوراق مع طبقات حماية سلامة البيانات.</span></li>
+            <li><span class="en">AI-assisted VBA logic for intelligent data categorization and analysis.</span><span class="ar">منطق VBA بمساعدة الذكاء الاصطناعي لتصنيف البيانات وتحليلها بشكل ذكي.</span></li>
+          </ul>
+          <div class="project-meta">
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span>Excel + VBA</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg><span class="en-inline">AI-Assisted</span><span class="ar-inline">بمساعدة AI</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="en-inline">Enterprise Grade</span><span class="ar-inline">مستوى مؤسسي</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="fade-in">
+    <div class="section-label"><span class="en-inline">Get In Touch</span><span class="ar-inline">تواصل معي</span></div>
+    <h2 class="section-title"><span class="en-inline">Let's <span>Connect</span></span><span class="ar-inline">لنتواصل <span>معاً</span></span></h2>
+    <div class="section-line"></div>
+    <p style="color:var(--gray);margin-bottom:2rem;max-width:520px;line-height:1.8;font-size:.92rem;">
+      <span class="en">Open to freelance projects, collaborations, and consulting in automation, data analysis, and AI-powered solutions.</span>
+      <span class="ar">متاح للمشاريع المستقلة والتعاون والاستشارات في مجال الأتمتة وتحليل البيانات والحلول المدعومة بالذكاء الاصطناعي.</span>
+    </p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-icon">📧</div>
+        <div class="contact-label">Email</div>
+        <div class="contact-value"><a href="mailto:ali.almuntaser121@gmail.com">ali.almuntaser121@gmail.com</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📱</div>
+        <div class="contact-label"><span class="en-inline">Phone / WhatsApp</span><span class="ar-inline">الهاتف / واتساب</span></div>
+        <div class="contact-value"><a href="tel:00971508966079" style="direction:ltr;unicode-bidi:embed;">+971 50 896 6079</a></div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-icon">📸</div>
+        <div class="contact-label">Instagram</div>
+        <div class="contact-value"><a href="https://instagram.com/l.vdxb" target="_blank">@l.vdxb</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <span class="en-inline">© 2026 <span>Ali AL-Muntaser</span> — Tech Specialist & Data Analyst. Certified by <span>Dubai Future Foundation</span>.</span>
+    <span class="ar-inline">© 2026 <span>علي المنتصر</span> — متخصص تقني ومحلل بيانات. معتمد من <span>مؤسسة دبي للمستقبل</span>.</span>
+  </p>
+</footer>
+
+<script>
+  function toggleLang(){
+    document.body.classList.toggle('arabic');
+    const isAr=document.body.classList.contains('arabic');
+    document.documentElement.lang=isAr?'ar':'en';
+    document.documentElement.dir=isAr?'rtl':'ltr';
+  }
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+  },{threshold:0.1});
+  document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
+  const barObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting)e.target.querySelectorAll('.skill-bar').forEach(b=>{b.style.width=b.dataset.width;});
+    });
+  },{threshold:0.2});
+  document.querySelectorAll('#skills').forEach(el=>barObs.observe(el));
+</script>
+</body>
+</html>
