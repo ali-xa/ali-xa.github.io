@@ -16,12 +16,13 @@
   .en-inline{display:inline;}.ar-inline{display:none;}
   body.arabic .en-inline{display:none;}body.arabic .ar-inline{display:inline;}
 
-  nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,22,40,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(74,144,217,0.15);padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:64px;}
-  .nav-logo{font-size:1rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;}
-  .nav-links{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;}
-  .nav-links a{color:var(--gray);font-size:.82rem;text-decoration:none;transition:.2s;font-weight:500;}
+  nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(74,144,217,0.15);padding:0 1rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
+  .nav-logo{font-size:.95rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;flex-shrink:0;}
+  .nav-links{display:flex;gap:.7rem;align-items:center;flex-wrap:nowrap;}
+  .nav-links a{color:var(--gray);font-size:.75rem;text-decoration:none;transition:.2s;font-weight:500;white-space:nowrap;}
   .nav-links a:hover{color:var(--accent2);}
-  .lang-btn{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;border:none;padding:.4rem 1rem;border-radius:20px;cursor:pointer;font-size:.8rem;font-weight:700;letter-spacing:1px;transition:transform .2s;box-shadow:0 2px 12px rgba(74,144,217,0.3);}
+  @media(max-width:480px){.nav-links a{display:none;}.nav-links .lang-btn{display:flex;}}
+  .lang-btn{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;border:none;padding:.35rem .85rem;border-radius:20px;cursor:pointer;font-size:.75rem;font-weight:700;letter-spacing:.5px;transition:transform .2s;box-shadow:0 2px 12px rgba(74,144,217,0.3);white-space:nowrap;flex-shrink:0;}
   .lang-btn:hover{transform:scale(1.05);}
 
   /* HERO */
