@@ -13,7 +13,7 @@
 <meta property="og:image:height" content="630"/>
 <meta name="twitter:image" content="https://i.imgur.com/GFT64qn.jpeg"/>
 <meta property="og:url" content="https://ali-xa.github.io/"/>
-<meta name="twitter:card" content="summary"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="Ali AL-Muntaser | Tech Specialist & Data Analyst"/>
 <meta name="twitter:description" content="Certified by Dubai Future Foundation | Excel/VBA Automation | AI-Assisted Programming"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet"/>
@@ -21,148 +21,140 @@
   :root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a6b;--accent:#4a90d9;--accent2:#64b5f6;--white:#f8faff;--gray:#8892b0;--card:#0d1f3c;--gold:#b3844c;--gold-light:#dfb67d;}
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;transition:all .3s;}
+  body{background:var(--navy);color:var(--white);font-family:'Inter',sans-serif;}
   body.arabic{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;}
   .en{display:block;}.ar{display:none;}
   body.arabic .en{display:none;}body.arabic .ar{display:block;}
   .en-inline{display:inline;}.ar-inline{display:none;}
   body.arabic .en-inline{display:none;}body.arabic .ar-inline{display:inline;}
 
+  /* NAV */
   nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(10,22,40,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(74,144,217,0.15);padding:0 1rem;display:flex;align-items:center;justify-content:space-between;height:56px;}
-  .nav-logo{font-size:.95rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;flex-shrink:0;}
-  .nav-links{display:flex;gap:.7rem;align-items:center;flex-wrap:nowrap;}
-  .nav-links a{color:var(--gray);font-size:.75rem;text-decoration:none;transition:.2s;font-weight:500;white-space:nowrap;}
+  .nav-logo{font-size:.9rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;white-space:nowrap;flex-shrink:0;}
+  .nav-links{display:flex;gap:.6rem;align-items:center;}
+  .nav-links a{color:var(--gray);font-size:.72rem;text-decoration:none;font-weight:500;white-space:nowrap;transition:.2s;}
   .nav-links a:hover{color:var(--accent2);}
-  @media(max-width:480px){.nav-links a{display:none;}.nav-links .lang-btn{display:flex;}}
-  .lang-btn{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;border:none;padding:.35rem .85rem;border-radius:20px;cursor:pointer;font-size:.75rem;font-weight:700;letter-spacing:.5px;transition:transform .2s;box-shadow:0 2px 12px rgba(74,144,217,0.3);white-space:nowrap;flex-shrink:0;}
+  @media(max-width:520px){.nav-links a{display:none;}}
+  .lang-btn{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;border:none;padding:.35rem .8rem;border-radius:20px;cursor:pointer;font-size:.72rem;font-weight:700;transition:transform .2s;box-shadow:0 2px 12px rgba(74,144,217,0.3);white-space:nowrap;flex-shrink:0;}
   .lang-btn:hover{transform:scale(1.05);}
 
   /* HERO */
-  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:8rem 2rem 4rem;position:relative;overflow:hidden;text-align:center;}
+  .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:7rem 1.5rem 4rem;position:relative;overflow:hidden;text-align:center;}
   .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(26,58,107,0.6),transparent 70%),radial-gradient(ellipse at 20% 80%,rgba(74,144,217,0.15),transparent 50%);pointer-events:none;}
-  
-  .hero-avatar-container {margin-bottom: 1.2rem; position: relative; display: inline-block; animation: fadeDown .8s ease;}
-  .hero-avatar {width: 110px; height: 110px; border-radius: 50%; object-fit: cover; display: block; padding: 4px; background: linear-gradient(135deg, var(--accent), var(--accent2)); border: 2px solid var(--navy); box-shadow: 0 4px 20px rgba(74,144,217,0.25); transition: transform .3s ease;}
-  .hero-avatar-container:hover .hero-avatar {transform: scale(1.05); background: linear-gradient(135deg, var(--accent2), var(--white));}
-
-  .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(74,144,217,0.12);border:1px solid rgba(74,144,217,0.35);border-radius:30px;padding: .4rem 1.2rem;font-size:.78rem;color:var(--accent2);letter-spacing:1px;margin-bottom:1.5rem;animation:fadeDown .8s ease;text-decoration:none;transition:transform .2s;}
-  .hero-badge:hover{transform:translateY(-1px);border-color:var(--accent2);}
-  .hero h1{font-size:clamp(2rem,6vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:.5rem;animation:fadeUp .8s ease .1s both;}
+  .hero-badge{display:inline-flex;align-items:center;gap:.4rem;background:rgba(74,144,217,0.12);border:1px solid rgba(74,144,217,0.35);border-radius:30px;padding:.35rem 1rem;font-size:.72rem;color:var(--accent2);letter-spacing:.5px;margin-bottom:1.2rem;animation:fadeDown .8s ease;text-decoration:none;transition:transform .2s;}
+  .hero-badge:hover{transform:translateY(-1px);}
+  .hero h1{font-size:clamp(1.8rem,6vw,3.8rem);font-weight:800;line-height:1.15;margin-bottom:.5rem;animation:fadeUp .8s ease .1s both;}
   .hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .hero-name{font-size:clamp(1rem,2.5vw,1.3rem);color:var(--white);font-weight:700;margin-bottom:1rem;letter-spacing:1px;animation:fadeUp .8s ease .15s both;}
-  .hero-sub{font-size:clamp(.88rem,2vw,1.05rem);color:var(--gray);max-width:600px;line-height:1.8;margin-bottom:2rem;animation:fadeUp .8s ease .2s both;}
-  .cert-badge{display:inline-flex;align-items:center;gap:.75rem;background:linear-gradient(135deg,rgba(74,144,217,0.1),rgba(26,58,107,0.4));border:1px solid rgba(74,144,217,0.4);border-radius:12px;padding:.8rem 1.6rem;margin-bottom:2.5rem;animation:fadeUp .8s ease .3s both;text-decoration:none;transition:transform .2s;cursor:pointer;}
-  .cert-badge:hover{transform:translateY(-2px);border-color:var(--accent2);}
-  .cert-icon{width:40px;height:40px;background:linear-gradient(135deg,var(--accent),var(--navy3));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+  .hero-name{font-size:clamp(.95rem,2.5vw,1.3rem);color:var(--white);font-weight:700;margin-bottom:1rem;letter-spacing:1px;animation:fadeUp .8s ease .15s both;}
+  .hero-sub{font-size:clamp(.82rem,2vw,1rem);color:var(--gray);max-width:580px;line-height:1.8;margin-bottom:1.8rem;animation:fadeUp .8s ease .2s both;padding:0 .5rem;}
+  .cert-badge{display:inline-flex;align-items:center;gap:.6rem;background:linear-gradient(135deg,rgba(74,144,217,0.1),rgba(26,58,107,0.4));border:1px solid rgba(74,144,217,0.4);border-radius:12px;padding:.7rem 1.2rem;margin-bottom:2rem;animation:fadeUp .8s ease .3s both;text-decoration:none;transition:transform .2s;max-width:95vw;}
+  .cert-badge:hover{transform:translateY(-2px);}
+  .cert-icon{width:36px;height:36px;background:linear-gradient(135deg,var(--accent),var(--navy3));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
   .cert-text-block{text-align:left;}
   body.arabic .cert-text-block{text-align:right;}
-  .cert-title-sm{font-size:.68rem;color:var(--accent2);letter-spacing:1px;font-weight:700;text-transform:uppercase;}
-  .cert-name-sm{font-size:.88rem;font-weight:700;color:#fff;}
-  .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .4s both;}
-  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(74,144,217,0.35);}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,144,217,0.5);}
-  .btn-outline{border:1.5px solid var(--accent);color:var(--accent2);padding:.75rem 2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.9rem;transition:all .2s;}
+  .cert-title-sm{font-size:.62rem;color:var(--accent2);letter-spacing:1px;font-weight:700;text-transform:uppercase;}
+  .cert-name-sm{font-size:.82rem;font-weight:700;color:#fff;line-height:1.3;}
+  .hero-btns{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .8s ease .4s both;}
+  .btn-primary{background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;padding:.7rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.88rem;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(74,144,217,0.35);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-outline{border:1.5px solid var(--accent);color:var(--accent2);padding:.7rem 1.6rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.88rem;transition:all .2s;}
   .btn-outline:hover{background:rgba(74,144,217,0.1);transform:translateY(-2px);}
-  .scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--gray);font-size:.7rem;letter-spacing:1px;animation:bounce 2s infinite;}
-  .scroll-indicator svg{width:20px;height:20px;color:var(--accent);}
+  .scroll-indicator{position:absolute;bottom:1.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.3rem;color:var(--gray);font-size:.65rem;animation:bounce 2s infinite;}
+  .scroll-indicator svg{width:18px;height:18px;color:var(--accent);}
 
   /* SECTIONS */
-  section{padding:5rem 2rem;max-width:1100px;margin:0 auto;}
-  .section-label{font-size:.72rem;color:var(--accent2);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:.5rem;}
-  .section-title{font-size:clamp(1.5rem,4vw,2.3rem);font-weight:800;margin-bottom:.6rem;}
+  section{padding:4rem 1.5rem;max-width:1100px;margin:0 auto;}
+  .section-label{font-size:.68rem;color:var(--accent2);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:.4rem;}
+  .section-title{font-size:clamp(1.4rem,4vw,2.3rem);font-weight:800;margin-bottom:.6rem;}
   .section-title span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .section-line{width:50px;height:3px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:3rem;}
+  .section-line{width:50px;height:3px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:2px;margin-bottom:2.5rem;}
   .section-divider{max-width:1100px;margin:0 auto;border:none;border-top:1px solid rgba(74,144,217,0.08);}
 
   /* ABOUT */
-  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;}
-  @media(max-width:700px){.about-grid{grid-template-columns:1fr;}}
-  .about-text{color:var(--gray);line-height:1.9;font-size:.95rem;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:center;}
+  @media(max-width:680px){.about-grid{grid-template-columns:1fr;gap:2rem;}}
+  .about-text{color:var(--gray);line-height:1.9;font-size:.93rem;}
   .about-text p{margin-bottom:1rem;}
-  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-  .stat-card{background:var(--card);border:1px solid rgba(74,144,217,0.15);border-radius:12px;padding:1.2rem;text-align:center;transition:.3s;}
+  .about-stats{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;}
+  .stat-card{background:var(--card);border:1px solid rgba(74,144,217,0.15);border-radius:12px;padding:1rem;text-align:center;transition:.3s;}
   .stat-card:hover{border-color:var(--accent);transform:translateY(-2px);}
-  .stat-num{font-size:2rem;font-weight:800;color:var(--accent2);}
-  .stat-label{font-size:.76rem;color:var(--gray);margin-top:.2rem;}
+  .stat-num{font-size:1.8rem;font-weight:800;color:var(--accent2);}
+  .stat-label{font-size:.72rem;color:var(--gray);margin-top:.2rem;}
 
   /* CERTIFICATE */
-  .cert-section-card{background:linear-gradient(135deg,var(--navy2),var(--navy3));border:1px solid rgba(74,144,217,0.35);border-radius:20px;padding:2.5rem;display:grid;grid-template-columns:auto 1fr;gap:2.5rem;align-items:center;box-shadow:0 8px 40px rgba(74,144,217,0.1);position:relative;overflow:hidden;}
-  @media(max-width:650px){.cert-section-card{grid-template-columns:1fr;text-align:center;}}
-  .cert-section-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 20%,rgba(74,144,217,0.12),transparent 60%);pointer-events:none;}
-  .cert-medal{width:100px;height:100px;background:linear-gradient(135deg,#f6c90e,#e8a000);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.8rem;flex-shrink:0;box-shadow:0 0 30px rgba(246,201,14,0.35);border:3px solid rgba(246,201,14,0.4);}
-  @media(max-width:650px){.cert-medal{margin:0 auto;}}
-  .cert-issued{font-size:.7rem;color:var(--accent2);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:.4rem;}
-  .cert-prog-name{font-size:1.3rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1.3;}
+  .cert-section-card{background:linear-gradient(135deg,var(--navy2),var(--navy3));border:1px solid rgba(74,144,217,0.35);border-radius:20px;padding:2rem;display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:center;box-shadow:0 8px 40px rgba(74,144,217,0.1);position:relative;overflow:hidden;}
+  @media(max-width:600px){.cert-section-card{grid-template-columns:1fr;text-align:center;gap:1.5rem;padding:1.5rem;}}
+  .cert-medal{width:90px;height:90px;background:linear-gradient(135deg,#f6c90e,#e8a000);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2.4rem;flex-shrink:0;box-shadow:0 0 30px rgba(246,201,14,0.35);border:3px solid rgba(246,201,14,0.4);}
+  @media(max-width:600px){.cert-medal{margin:0 auto;}}
+  .cert-issued{font-size:.68rem;color:var(--accent2);letter-spacing:2px;font-weight:700;text-transform:uppercase;margin-bottom:.3rem;}
+  .cert-prog-name{font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:.3rem;line-height:1.3;}
   .cert-prog-name span{background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
-  .cert-org{font-size:.85rem;color:var(--accent2);font-weight:600;margin-bottom:.8rem;}
-  .cert-desc{font-size:.83rem;color:var(--gray);line-height:1.75;margin-bottom:1.2rem;max-width:600px;}
-  .cert-tags{display:flex;flex-wrap:wrap;gap:.5rem;}
-  @media(max-width:650px){.cert-tags{justify-content:center;}}
-  .cert-tag-pill{background:rgba(74,144,217,0.12);border:1px solid rgba(74,144,217,0.25);color:var(--accent2);font-size:.7rem;font-weight:700;padding:.25rem .7rem;border-radius:20px;letter-spacing:.5px;}
-  .btn-cert-link{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;padding:.6rem 1.4rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.8rem;margin-bottom:1.2rem;transition:all .2s;box-shadow:0 4px 15px rgba(74,144,217,0.25);}
-  .btn-cert-link:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(74,144,217,0.4);}
+  .cert-org{font-size:.8rem;color:var(--accent2);font-weight:600;margin-bottom:.7rem;}
+  .cert-desc{font-size:.8rem;color:var(--gray);line-height:1.75;margin-bottom:1rem;}
+  .cert-tags{display:flex;flex-wrap:wrap;gap:.4rem;}
+  @media(max-width:600px){.cert-tags{justify-content:center;}}
+  .cert-tag-pill{background:rgba(74,144,217,0.12);border:1px solid rgba(74,144,217,0.25);color:var(--accent2);font-size:.67rem;font-weight:700;padding:.22rem .65rem;border-radius:20px;}
+  .btn-cert-link{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--accent),var(--navy3));color:#fff;padding:.55rem 1.2rem;border-radius:8px;text-decoration:none;font-weight:700;font-size:.78rem;margin-bottom:1rem;transition:all .2s;box-shadow:0 4px 15px rgba(74,144,217,0.25);}
+  .btn-cert-link:hover{transform:translateY(-2px);}
 
   /* SKILLS */
-  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.5rem;}
-  .skill-card{background:var(--card);border:1px solid rgba(74,144,217,0.12);border-radius:14px;padding:1.5rem;transition:.3s;}
-  .skill-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 30px rgba(74,144,217,0.1);}
-  .skill-icon{width:44px;height:44px;background:linear-gradient(135deg,rgba(74,144,217,0.2),rgba(26,58,107,0.5));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin-bottom:.9rem;border:1px solid rgba(74,144,217,0.25);}
-  .skill-name{font-weight:700;font-size:.92rem;margin-bottom:.3rem;}
-  .skill-desc{color:var(--gray);font-size:.8rem;line-height:1.6;margin-bottom:.9rem;}
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;}
+  .skill-card{background:var(--card);border:1px solid rgba(74,144,217,0.12);border-radius:14px;padding:1.3rem;transition:.3s;}
+  .skill-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .skill-icon{width:42px;height:42px;background:linear-gradient(135deg,rgba(74,144,217,0.2),rgba(26,58,107,0.5));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:.8rem;border:1px solid rgba(74,144,217,0.25);}
+  .skill-name{font-weight:700;font-size:.9rem;margin-bottom:.3rem;}
+  .skill-desc{color:var(--gray);font-size:.78rem;line-height:1.6;margin-bottom:.8rem;}
   .skill-bar-bg{background:rgba(74,144,217,0.1);border-radius:10px;height:5px;overflow:hidden;}
   .skill-bar{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width 1.2s ease;}
 
-  /* PROJECTS - UPDATED WITH INTERACTIVE SHOWROOM */
-  .projects-stack{display:flex;flex-direction:column;gap:3.5rem;}
-  .project-card{background:var(--card);border:1px solid rgba(74,144,217,0.2);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1.2fr 1fr;transition:.3s;box-shadow:0 8px 40px rgba(0,0,0,0.3);}
-  @media(max-width:900px){.project-card{grid-template-columns:1fr;}}
+  /* PROJECTS */
+  .projects-stack{display:flex;flex-direction:column;gap:2.5rem;}
+  .project-card{background:var(--card);border:1px solid rgba(179,132,76,0.25);border-radius:20px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;transition:.3s;box-shadow:0 8px 40px rgba(0,0,0,0.3);}
+  @media(max-width:800px){.project-card{grid-template-columns:1fr;}}
   .project-card:hover{border-color:var(--gold);box-shadow:0 12px 50px rgba(179,132,76,0.2);}
-  
-  /* System Visual Showroom Frame */
-  .project-showroom{background:#161d26;padding:1.5rem;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1rem;position:relative;border-right:1px solid rgba(254,254,254,0.05);min-height:380px;}
-  body.arabic .project-showroom{border-right:none;border-left:1px solid rgba(254,254,254,0.05);}
-  .main-preview-container{width:100%;height:240px;border-radius:10px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 4px 20px rgba(0,0,0,0.5);background:#000;position:relative;}
-  .main-preview-container img{width:100%;height:100%;object-fit:cover;transition:transform .3s ease;cursor:zoom-in;}
+
+  /* Showroom */
+  .project-showroom{background:#0e1520;padding:1.2rem;display:flex;flex-direction:column;align-items:center;gap:.8rem;position:relative;}
+  .main-preview-container{width:100%;border-radius:10px;overflow:hidden;border:2px solid var(--gold);box-shadow:0 4px 20px rgba(0,0,0,0.5);background:#000;aspect-ratio:16/10;}
+  .main-preview-container img{width:100%;height:100%;object-fit:cover;transition:transform .3s;cursor:zoom-in;display:block;}
   .main-preview-container img:hover{transform:scale(1.02);}
-  
-  /* Thumbnails Navigation */
-  .showroom-thumbnails{display:flex;gap:.5rem;width:100%;overflow-x:auto;padding:.2rem;}
-  .thumb-nav{width:70px;height:45px;border-radius:6px;overflow:hidden;border:2px solid transparent;cursor:pointer;opacity:0.6;transition:.2s;flex-shrink:0;}
+  .showroom-thumbnails{display:flex;gap:.4rem;width:100%;overflow-x:auto;padding:.2rem 0;scrollbar-width:none;}
+  .showroom-thumbnails::-webkit-scrollbar{display:none;}
+  .thumb-nav{width:60px;height:38px;border-radius:5px;overflow:hidden;border:2px solid transparent;cursor:pointer;opacity:.55;transition:.2s;flex-shrink:0;}
   .thumb-nav.active{border-color:var(--gold-light);opacity:1;box-shadow:0 0 8px var(--gold);}
-  .thumb-nav img{width:100%;height:100%;object-fit:cover;}
-  
-  .project-chips{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;}
-  .chip{background:rgba(179,132,76,0.15);border:1px solid rgba(179,132,76,0.4);color:var(--gold-light);font-size:.67rem;font-weight:600;padding:.2rem .6rem;border-radius:20px;}
-  .project-info{padding:2.2rem;display:flex;flex-direction:column;justify-content:center;}
-  .project-tag{display:inline-block;background:rgba(179,132,76,0.15);color:var(--gold-light);font-size:.67rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.22rem .72rem;border-radius:20px;border:1px solid rgba(179,132,76,0.3);margin-bottom:.75rem;align-self:flex-start;}
+  .thumb-nav img{width:100%;height:100%;object-fit:cover;display:block;}
+  .project-chips{display:flex;flex-wrap:wrap;gap:.35rem;justify-content:center;}
+  .chip{background:rgba(179,132,76,0.15);border:1px solid rgba(179,132,76,0.35);color:var(--gold-light);font-size:.63rem;font-weight:600;padding:.18rem .55rem;border-radius:20px;}
+
+  /* Project Info */
+  .project-info{padding:1.6rem;display:flex;flex-direction:column;}
+  .project-tag{display:inline-block;background:rgba(179,132,76,0.15);color:var(--gold-light);font-size:.63rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.2rem .65rem;border-radius:20px;border:1px solid rgba(179,132,76,0.3);margin-bottom:.7rem;align-self:flex-start;}
   body.arabic .project-tag{align-self:flex-end;}
-  .project-title{font-size:1.25rem;font-weight:800;margin-bottom:.6rem;line-height:1.3;color:#fff;}
-  .project-desc{color:var(--gray);font-size:.85rem;line-height:1.8;margin-bottom:1.2rem;}
-  
-  .features-title{font-size:.72rem;color:var(--gold-light);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.5rem;}
-  .project-features{list-style:none;display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.2rem;padding:0;}
-  .project-features li{display:flex;gap:.5rem;color:var(--gray);font-size:.82rem;line-height:1.5;align-items:flex-start;}
-  .project-features li::before{content:'▸';color:var(--gold);font-size:.9rem;line-height:1;flex-shrink:0;margin-top:2px;}
-  
-  .impact-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem;}
-  .impact-chip{background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);border-radius:8px;padding:.4rem .8rem;font-size:.75rem;color:var(--white);}
+  .project-title{font-size:1rem;font-weight:800;margin-bottom:.55rem;line-height:1.3;color:#fff;}
+  .project-desc{color:var(--gray);font-size:.8rem;line-height:1.8;margin-bottom:.9rem;}
+  .features-title{font-size:.67rem;color:var(--gold-light);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:.45rem;}
+  .project-features{list-style:none;display:flex;flex-direction:column;gap:.4rem;margin-bottom:.9rem;padding:0;}
+  .project-features li{display:flex;gap:.45rem;color:var(--gray);font-size:.77rem;line-height:1.5;align-items:flex-start;}
+  .project-features li::before{content:'▸';color:var(--gold);font-size:.8rem;flex-shrink:0;margin-top:2px;}
+  .impact-row{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.9rem;}
+  .impact-chip{background:rgba(74,144,217,0.08);border:1px solid rgba(74,144,217,0.2);border-radius:8px;padding:.3rem .6rem;font-size:.7rem;color:var(--white);}
   .impact-chip b{color:var(--accent2);}
-  .project-meta{display:flex;gap:.9rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.05);padding-top:1rem;}
-  .meta-item{display:flex;align-items:center;gap:.35rem;font-size:.75rem;color:var(--gray);}
-  .meta-item svg{color:var(--gold);width:14px;height:14px;}
+  .project-meta{display:flex;gap:.8rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.05);padding-top:.9rem;margin-top:auto;}
+  .meta-item{display:flex;align-items:center;gap:.3rem;font-size:.7rem;color:var(--gray);}
+  .meta-item svg{color:var(--gold);width:13px;height:13px;}
 
   /* CONTACT */
-  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:820px;}
-  @media(max-width:600px){.contact-grid{grid-template-columns:1fr;}}
-  .contact-card{background:var(--card);border:1px solid rgba(74,144,217,0.15);border-radius:16px;padding:1.8rem 1.2rem;text-align:center;transition:.3s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:140px;}
+  .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:780px;}
+  @media(max-width:560px){.contact-grid{grid-template-columns:1fr;max-width:400px;}}
+  .contact-card{background:var(--card);border:1px solid rgba(74,144,217,0.15);border-radius:16px;padding:1.5rem 1rem;text-align:center;transition:.3s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:130px;}
   .contact-card:hover{border-color:var(--accent);transform:translateY(-3px);}
-  .contact-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--accent),var(--navy3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin:0 auto .8rem;flex-shrink:0;}
-  .contact-label{font-size:.7rem;color:var(--accent2);letter-spacing:1px;font-weight:700;text-transform:uppercase;margin-bottom:.4rem;}
-  .contact-value{font-size:.82rem;font-weight:600;color:#fff;word-break:break-word;overflow-wrap:anywhere;max-width:100%;line-height:1.4;}
+  .contact-icon{width:46px;height:46px;background:linear-gradient(135deg,var(--accent),var(--navy3));border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;margin:0 auto .7rem;flex-shrink:0;}
+  .contact-label{font-size:.67rem;color:var(--accent2);letter-spacing:1px;font-weight:700;text-transform:uppercase;margin-bottom:.35rem;}
+  .contact-value{font-size:.78rem;font-weight:600;color:#fff;word-break:break-word;overflow-wrap:anywhere;max-width:100%;line-height:1.4;}
   .contact-value a{color:#fff;text-decoration:none;direction:ltr;display:inline-block;unicode-bidi:embed;word-break:break-all;}
   .contact-value a:hover{color:var(--accent2);}
 
-  footer{text-align:center;padding:2rem;border-top:1px solid rgba(74,144,217,0.1);color:var(--gray);font-size:.78rem;}
+  footer{text-align:center;padding:1.8rem;border-top:1px solid rgba(74,144,217,0.1);color:var(--gray);font-size:.75rem;}
   footer span{color:var(--accent2);}
 
   @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
@@ -193,8 +185,8 @@
 </nav>
 
 <div class="hero">
-  <div class="hero-avatar-container">
-    <img src="p1.png" alt="Ali AL-Muntaser" class="hero-avatar"/>
+  <div style="margin-bottom:1.2rem;animation:fadeDown .8s ease;">
+    <img src="p1.png" alt="Ali AL-Muntaser" style="width:110px;height:110px;border-radius:50%;object-fit:cover;outline:3px solid var(--accent);outline-offset:3px;box-shadow:0 4px 20px rgba(74,144,217,0.3);transition:transform .3s;"/>
   </div>
 
   <a href="https://omp.dub.ai/certificate/YmODxQeeuP3i" target="_blank" class="hero-badge">
@@ -210,8 +202,8 @@
     <span class="ar-inline">علي المنتصر</span>
   </div>
   <p class="hero-sub">
-    <span class="en-inline">Specialist in administrative system automation and advanced business intelligence solutions, integrating prompt engineering and artificial intelligence to accelerate software workflows and optimize individual and corporate data efficiency.</span>
-    <span class="ar-inline">متخصص في أتمتة الأنظمة الإدارية وتطوير حلول ذكاء الأعمال المتقدمة، مع دمج تقنيات الهندسة الفورية والذكاء الاصطناعي لتسريع بيئات العمل البرمجية وتحسين كفاءة البيانات الفردية والمؤسسية.</span>
+    <span class="en-inline">Specialist in administrative system automation and advanced business intelligence solutions, integrating prompt engineering and AI to accelerate workflows and optimize data efficiency.</span>
+    <span class="ar-inline">متخصص في أتمتة الأنظمة الإدارية وتطوير حلول ذكاء الأعمال المتقدمة، مع دمج تقنيات الهندسة الفورية والذكاء الاصطناعي لتسريع بيئات العمل وتحسين كفاءة البيانات.</span>
   </p>
   <a href="https://omp.dub.ai/certificate/YmODxQeeuP3i" target="_blank" class="cert-badge">
     <div class="cert-icon">🏆</div>
@@ -247,10 +239,10 @@
         <p class="ar">بعقلية تفكير منظومية، أصمم حلول أتمتة توفر الوقت وتقلل الأخطاء وتولّد رؤى قابلة للتنفيذ لصانعي القرار.</p>
       </div>
       <div class="about-stats">
-        <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label en">Weeks — Featured Project</div><div class="stat-label ar">أسابيع — المشروع المميز</div></div>
-        <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label en">Core Specializations</div><div class="stat-label ar">تخصصات رئيسية</div></div>
-        <div class="stat-card"><div class="stat-num">🏆</div><div class="stat-label en">DFF Certified</div><div class="stat-label ar">معتمد من DFF</div></div>
-        <div class="stat-card"><div class="stat-num">75%</div><div class="stat-label en">Reporting Time Saved</div><div class="stat-label ar">تقليل وقت التقارير</div></div>
+        <div class="stat-card"><div class="stat-num">6+</div><div class="stat-label en">Weeks — Project</div><div class="stat-label ar">أسابيع — المشروع</div></div>
+        <div class="stat-card"><div class="stat-num">5+</div><div class="stat-label en">Specializations</div><div class="stat-label ar">تخصصات</div></div>
+        <div class="stat-card"><div class="stat-num">🏆</div><div class="stat-label en">DFF Certified</div><div class="stat-label ar">معتمد DFF</div></div>
+        <div class="stat-card"><div class="stat-num">75%</div><div class="stat-label en">Time Saved</div><div class="stat-label ar">توفير وقت</div></div>
       </div>
     </div>
   </div>
@@ -272,19 +264,17 @@
           <span class="ar-inline">مبادرة <span>مليون خبير لأوامر الذكاء الاصطناعي</span></span>
         </div>
         <div class="cert-org">
-          <span class="en-inline">🏛 Dubai Future Foundation &nbsp;|&nbsp; Dubai Centre for Artificial Intelligence</span>
+          <span class="en-inline">🏛 Dubai Future Foundation &nbsp;|&nbsp; Dubai Centre for AI</span>
           <span class="ar-inline">🏛 مؤسسة دبي للمستقبل &nbsp;|&nbsp; مركز دبي للذكاء الاصطناعي</span>
         </div>
         <div class="cert-desc">
-          <span class="en">Awarded to <strong style="color:#fff">Ali AL-Muntaser</strong> for successfully completing the One Million Prompters initiative, launched by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai. This initiative trains professionals in prompt engineering for AI systems, in alignment with the Dubai Universal Blueprint for Artificial Intelligence — contributing to building a future-ready workforce.</span>
-          <span class="ar">ممنوحة إلى <strong style="color:#fff">علي المنتصر</strong> لإتمامه بنجاح مبادرة مليون خبير لأوامر الذكاء الاصطناعي، التي أطلقها سمو الشيخ حمدان بن محمد بن راشد آل مكتوم، ولي عهد دبي. تهدف هذه المبادرة إلى تدريب وتمكين المحترفين في مجال هندسة الأوامر لأنظمة الذكاء الاصطناعي، انسجاماً مع المخطط الشامل لدبي للذكاء الاصطناعي.</span>
+          <span class="en">Awarded to <strong style="color:#fff">Ali AL-Muntaser</strong> for successfully completing the One Million Prompters initiative, launched by His Highness Sheikh Hamdan bin Mohammed bin Rashid Al Maktoum, Crown Prince of Dubai — contributing to building a future-ready AI workforce.</span>
+          <span class="ar">ممنوحة إلى <strong style="color:#fff">علي المنتصر</strong> لإتمامه بنجاح مبادرة مليون خبير لأوامر الذكاء الاصطناعي، التي أطلقها سمو الشيخ حمدان بن محمد بن راشد آل مكتوم، ولي عهد دبي — بما يُسهم في بناء كوادر مستعدة لمستقبل الذكاء الاصطناعي.</span>
         </div>
-        
         <a href="https://omp.dub.ai/certificate/YmODxQeeuP3i" target="_blank" class="btn-cert-link">
-          <span class="en-inline">Verify Official Certificate ↗</span>
-          <span class="ar-inline">التحقق من الشهادة الرسمية ↗</span>
+          <span class="en-inline">Verify Certificate ↗</span>
+          <span class="ar-inline">التحقق من الشهادة ↗</span>
         </a>
-
         <div class="cert-tags">
           <span class="cert-tag-pill"><span class="en-inline">Prompt Engineering</span><span class="ar-inline">هندسة الأوامر</span></span>
           <span class="cert-tag-pill"><span class="en-inline">Artificial Intelligence</span><span class="ar-inline">الذكاء الاصطناعي</span></span>
@@ -348,72 +338,56 @@
 <section id="projects">
   <div class="fade-in">
     <div class="section-label"><span class="en-inline">Featured Work</span><span class="ar-inline">الأعمال المميزة</span></div>
-    <h2 class="section-title"><span class="en-inline">Smart Business <span>Automation </span></span><span class="ar-inline">الأنظمة <span>الذكية لإدارة الأعمال</span></span></h2>
+    <h2 class="section-title"><span class="en-inline">Smart Business <span>Automation</span></span><span class="ar-inline">الأنظمة <span>الذكية لإدارة الأعمال</span></span></h2>
     <div class="section-line"></div>
     <div class="projects-stack">
-
       <div class="project-card">
         <div class="project-showroom">
           <div class="main-preview-container">
-            <img id="projectMainView" src="home.png" alt="System Home View"/>
+            <img id="projectMainView" src="home.png" alt="System View"/>
           </div>
           <div class="showroom-thumbnails">
-            <div class="thumb-nav active" onclick="switchImage('home.png', this)">
-              <img src="home.png" alt="Home Screen"/>
-            </div>
-            <div class="thumb-nav" onclick="switchImage('products.png', this)">
-              <img src="products.png" alt="Products Screen"/>
-            </div>
-            <div class="thumb-nav" onclick="switchImage('sales.png', this)">
-              <img src="sales.png" alt="Sales Screen"/>
-            </div>
-            <div class="thumb-nav" onclick="switchImage('expenses.png', this)">
-              <img src="expenses.png" alt="Expenses Screen"/>
-            </div>
-            <div class="thumb-nav" onclick="switchImage('overview.png', this)">
-              <img src="overview.png" alt="Overview Analytics Screen"/>
-            </div>
+            <div class="thumb-nav active" onclick="switchImg('home.png',this)"><img src="home.png" alt="Home"/></div>
+            <div class="thumb-nav" onclick="switchImg('products.png',this)"><img src="products.png" alt="Products"/></div>
+            <div class="thumb-nav" onclick="switchImg('sales.png',this)"><img src="sales.png" alt="Sales"/></div>
+            <div class="thumb-nav" onclick="switchImg('expenses.png',this)"><img src="expenses.png" alt="Expenses"/></div>
+            <div class="thumb-nav" onclick="switchImg('overview.png',this)"><img src="overview.png" alt="Overview"/></div>
           </div>
           <div class="project-chips">
-            <span class="chip">Advanced Excel</span><span class="chip">VBA Architecture</span><span class="chip">Interactive UI</span><span class="chip">Data Validation</span><span class="chip">KPI Dashboards</span>
+            <span class="chip">Advanced Excel</span><span class="chip">VBA</span><span class="chip">Interactive UI</span><span class="chip">KPI Dashboards</span>
           </div>
         </div>
-
         <div class="project-info">
-          <span class="project-tag"><span class="en-inline">⭐ Featured System — Enterprise Grade</span><span class="ar-inline">⭐ نظام مميز — جودة مؤسسية</span></span>
+          <span class="project-tag"><span class="en-inline">⭐ Featured — Enterprise Grade</span><span class="ar-inline">⭐ مميز — جودة مؤسسية</span></span>
           <h3 class="project-title">
             <span class="en">Commercial & Financial Operations Management System</span>
-            <span class="ar">النظام المتكامل لإدارة المبيعات والمصروفات </span>
+            <span class="ar">النظام المتكامل لإدارة المبيعات والمصروفات</span>
           </h3>
           <p class="project-desc">
-            <span class="en">A tailored commercial infrastructure environment built completely inside Microsoft Excel using custom automated VBA layers. It handles catalog valuation, algorithmic data integrity, dynamic cash/card reporting, and custom dashboard analytical engines.</span>
-            <span class="ar">بيئة رقمية مخصصة لإدارة العمليات التجارية والمالية بالكامل داخل بيئة Microsoft Excel باستخدام بنيات برمجية مؤتمتة بـ VBA. يتحكم النظام في تسعير المنتجات، وضمان سلامة البيانات الخلوية، وتتبع عمليات الدفع النقدي والإلكتروني، وتوليد لوحات ذكاء أعمال تحليلية متقدمة.</span>
+            <span class="en">A tailored commercial infrastructure built inside Microsoft Excel using automated VBA layers — handling catalog valuation, data integrity, cash/card reporting, and analytical dashboard engines.</span>
+            <span class="ar">بيئة رقمية مخصصة لإدارة العمليات التجارية والمالية بالكامل داخل Microsoft Excel باستخدام بنيات VBA مؤتمتة، تتحكم في تسعير المنتجات وسلامة البيانات وتتبع المدفوعات وتوليد لوحات تحليلية متقدمة.</span>
           </p>
-          
-          <div class="features-title"><span class="en-inline">Core Architecture Matrix</span><span class="ar-inline">المصفوفة الهيكلية للنظام</span></div>
+          <div class="features-title"><span class="en-inline">Core Architecture</span><span class="ar-inline">الهيكل الأساسي للنظام</span></div>
           <ul class="project-features">
-            <li><span class="en"><b>Visual Home Hub:</b> Minimalist, high-end design matching premium consumer branding layout.</span><span class="ar"><b>الواجهة الرئيسية الترحيبية:</b> تصميم فاخر وبسيط متطابق مع الهوية البصرية للعلامات التجارية الراقية.</span></li>
-            <li><span class="en"><b>Dynamic Product Catalog:</b> Live pricing tables supporting diverse premium assets (Designer Handbags, Mukhawar, Premium Oud).</span><span class="ar"><b>كتالوج المنتجات الديناميكي:</b> جداول تسعير حية تدعم أصول السلع الراقية (حقائب مصممة، مخاوير، عود وبخور فاخر).</span></li>
-            <li><span class="en"><b>Automated Ledger Pipelines:</b> Intelligent data validation dropdowns with direct formula-driven AED total generation.</span><span class="ar"><b>أنابيب القيود الآلية:</b> قوائم منسدلة ذكية للتحقق من البيانات مع احتساب تلقائي وفوري للقيمة الإجمالية بالدرهم الإماراتي.</span></li>
-            <li><span class="en"><b>Granular Expense Auditing:</b> Categorized transactional pipelines managing operational outflows (Shipping, Marketing, Purchases).</span><span class="ar"><b>تدقيق تفصيلي للمصروفات:</b> تصنيف ذكي للمخرجات والعمليات المالية التشغيلية مثل (الشحن، التسويق، المشتريات).</span></li>
-            <li><span class="en"><b>Executive BI Dashboard:</b> Live interactive charts tracking Net Profit margins along with analytical time-slicing features.</span><span class="ar"><b>لوحة معلومات ذكاء الأعمال:</b> رسوم بيانية فورية وتفاعلية لمراقبة صافي الأرباح (Net Profit) مع ميزة تصفية البيانات الزمنية.</span></li>
+            <li><span class="en"><b>Visual Home Hub:</b> Premium design matching high-end consumer branding.</span><span class="ar"><b>الواجهة الرئيسية:</b> تصميم فاخر متطابق مع الهوية البصرية للعلامات الراقية.</span></li>
+            <li><span class="en"><b>Dynamic Product Catalog:</b> Live pricing for designer handbags, Mukhawar, premium Oud.</span><span class="ar"><b>كتالوج المنتجات الديناميكي:</b> تسعير حي للحقائب المصممة والمخاوير والعود الفاخر.</span></li>
+            <li><span class="en"><b>Automated Ledger Pipelines:</b> Smart dropdowns with formula-driven AED total generation.</span><span class="ar"><b>أنابيب القيود الآلية:</b> قوائم ذكية مع احتساب تلقائي بالدرهم الإماراتي.</span></li>
+            <li><span class="en"><b>Expense Auditing:</b> Categorized tracking for Shipping, Marketing, Purchases.</span><span class="ar"><b>تدقيق المصروفات:</b> تصنيف ذكي للشحن والتسويق والمشتريات.</span></li>
+            <li><span class="en"><b>Executive BI Dashboard:</b> Live charts tracking Net Profit with time-slicing filters.</span><span class="ar"><b>لوحة ذكاء الأعمال:</b> رسوم بيانية فورية لصافي الأرباح مع تصفية البيانات الزمنية.</span></li>
           </ul>
-
-          <div class="features-title"><span class="en-inline">Strategic Business Impact</span><span class="ar-inline">الأثر التجاري الاستراتيجي</span></div>
+          <div class="features-title"><span class="en-inline">Impact</span><span class="ar-inline">الأثر</span></div>
           <div class="impact-row">
-            <div class="impact-chip">⚡ <b><span class="en-inline">75%</span><span class="ar-inline">75%</span></b> <span class="en-inline">Reduction in accounting time</span><span class="ar-inline">تقليل في وقت المحاسبة</span></div>
-            <div class="impact-chip">📈 <b><span class="en-inline">Live KPIs</span><span class="ar-inline">مؤشرات حية</span></b> <span class="en-inline">Instant net profit intelligence</span><span class="ar-inline">رصد فوري لصافي الأرباح</span></div>
-            <div class="impact-chip">✅ <b><span class="en-inline">Zero Error</span><span class="ar-inline">صفر أخطاء</span></b> <span class="en-inline">VBA locked structural sheets</span><span class="ar-inline">حماية كاملة لهياكل الأوراق</span></div>
+            <div class="impact-chip">⚡ <b>75%</b> <span class="en-inline">less accounting time</span><span class="ar-inline">تقليل وقت المحاسبة</span></div>
+            <div class="impact-chip">📈 <b><span class="en-inline">Live KPIs</span><span class="ar-inline">مؤشرات حية</span></b></div>
+            <div class="impact-chip">✅ <b><span class="en-inline">Zero Errors</span><span class="ar-inline">صفر أخطاء</span></b></div>
           </div>
-          
           <div class="project-meta">
-            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span>Excel Custom Engine</span></div>
-            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg><span>AI-Optimized Logic</span></div>
-            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="en-inline">6 weeks</span><span class="ar-inline">6 أسابيع</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="en-inline">6 Weeks</span><span class="ar-inline">6 أسابيع</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg><span>Excel + VBA</span></div>
+            <div class="meta-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg><span>AI-Optimized</span></div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -425,7 +399,7 @@
     <div class="section-label"><span class="en-inline">Get In Touch</span><span class="ar-inline">تواصل معي</span></div>
     <h2 class="section-title"><span class="en-inline">Let's <span>Connect</span></span><span class="ar-inline">لنتواصل <span>معاً</span></span></h2>
     <div class="section-line"></div>
-    <p style="color:var(--gray);margin-bottom:2rem;max-width:520px;line-height:1.8;font-size:.92rem;">
+    <p style="color:var(--gray);margin-bottom:2rem;max-width:520px;line-height:1.8;font-size:.9rem;">
       <span class="en">Open to freelance projects, collaborations, and consulting in automation, data analysis, and AI-powered solutions.</span>
       <span class="ar">متاح للمشاريع المستقلة والتعاون والاستشارات في مجال الأتمتة وتحليل البيانات والحلول المدعومة بالذكاء الاصطناعي.</span>
     </p>
@@ -444,7 +418,7 @@
       </div>
       <div class="contact-card">
         <div class="contact-icon" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204 .013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
         </div>
         <div class="contact-label"><span class="en-inline">Instagram</span><span class="ar-inline">انستقرام</span></div>
         <div class="contact-value"><a href="https://instagram.com/l.vdxb" target="_blank">@l.vdxb</a></div>
@@ -467,30 +441,14 @@
     document.documentElement.lang=isAr?'ar':'en';
     document.documentElement.dir=isAr?'rtl':'ltr';
   }
-  
-  // Showroom Interactive Switcher Logic
-  function switchImage(imgSrc, thumbnailEl) {
-    // 1. Change Main Image
-    document.getElementById('projectMainView').src = imgSrc;
-    
-    // 2. Clear Active Thumbnail State
-    const allThumbs = thumbnailEl.parentElement.querySelectorAll('.thumb-nav');
-    allThumbs.forEach(t => t.classList.remove('active'));
-    
-    // 3. Set Current Active
-    thumbnailEl.classList.add('active');
+  function switchImg(src,el){
+    document.getElementById('projectMainView').src=src;
+    el.parentElement.querySelectorAll('.thumb-nav').forEach(t=>t.classList.remove('active'));
+    el.classList.add('active');
   }
-
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-  },{threshold:0.1});
+  const obs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.classList.add('visible');});},{threshold:0.1});
   document.querySelectorAll('.fade-in').forEach(el=>obs.observe(el));
-  
-  const barObs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting)e.target.querySelectorAll('.skill-bar').forEach(b=>{b.style.width=b.dataset.width;});
-    });
-  },{threshold:0.2});
+  const barObs=new IntersectionObserver(e=>{e.forEach(i=>{if(i.isIntersecting)i.target.querySelectorAll('.skill-bar').forEach(b=>{b.style.width=b.dataset.width;});});},{threshold:0.2});
   document.querySelectorAll('#skills').forEach(el=>barObs.observe(el));
 </script>
 </body>
